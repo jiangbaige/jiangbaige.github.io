@@ -96,25 +96,23 @@
 
 
 
-  <meta name="description" content="一、项目概述项目最初的灵感来源于一篇翻译博客，在博客中技术人员演示了使用Bad USB恶意硬件设备窃取Windows哈希的技术，并称Mac同样能够获取，于是我们希望能够复现并加以改进。但是在实际学习调研的过程中，我们首先发现由于翻译不够负责，与英文原文相比翻译内容对实验结果有夸大，此外由于原本采购的硬件USB Armory驱动支持率过低的问题，我们在后来的研究中也改变了计划，采用了另一款驱动支持率">
-<meta name="keywords" content="哈希">
-<meta property="og:type" content="article">
-<meta property="og:title" content="利用Bad USB窃取系统哈希的研究">
-<meta property="og:url" content="http://yoursite.com/2017/02/12/利用Bad USB窃取系统哈希的研究/index.html">
+  <meta name="description" content="Record learning notes at any time">
+<meta property="og:type" content="website">
+<meta property="og:title" content="jiangbaige&#39;s blogs">
+<meta property="og:url" content="http://yoursite.com/page/2/index.html">
 <meta property="og:site_name" content="jiangbaige&#39;s blogs">
-<meta property="og:description" content="一、项目概述项目最初的灵感来源于一篇翻译博客，在博客中技术人员演示了使用Bad USB恶意硬件设备窃取Windows哈希的技术，并称Mac同样能够获取，于是我们希望能够复现并加以改进。但是在实际学习调研的过程中，我们首先发现由于翻译不够负责，与英文原文相比翻译内容对实验结果有夸大，此外由于原本采购的硬件USB Armory驱动支持率过低的问题，我们在后来的研究中也改变了计划，采用了另一款驱动支持率">
+<meta property="og:description" content="Record learning notes at any time">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-02-13T08:18:30.602Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="利用Bad USB窃取系统哈希的研究">
-<meta name="twitter:description" content="一、项目概述项目最初的灵感来源于一篇翻译博客，在博客中技术人员演示了使用Bad USB恶意硬件设备窃取Windows哈希的技术，并称Mac同样能够获取，于是我们希望能够复现并加以改进。但是在实际学习调研的过程中，我们首先发现由于翻译不够负责，与英文原文相比翻译内容对实验结果有夸大，此外由于原本采购的硬件USB Armory驱动支持率过低的问题，我们在后来的研究中也改变了计划，采用了另一款驱动支持率">
+<meta name="twitter:title" content="jiangbaige&#39;s blogs">
+<meta name="twitter:description" content="Record learning notes at any time">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/02/12/利用Bad USB窃取系统哈希的研究/">
+  <link rel="canonical" href="http://yoursite.com/page/2/">
 
 
 
@@ -124,7 +122,7 @@
   };
 </script>
 
-  <title>利用Bad USB窃取系统哈希的研究 | jiangbaige's blogs</title>
+  <title>jiangbaige's blogs</title>
   
 
 
@@ -172,7 +170,8 @@
     
   
 
-  <div class="container sidebar-position-left page-post-detail">
+  <div class="container sidebar-position-left 
+  page-home">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -327,9 +326,9 @@
           
           <div id="content" class="content">
             
-
-  <div id="posts" class="posts-expand">
+  <section id="posts" class="posts-expand">
     
+      
 
   
 
@@ -361,8 +360,10 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">利用Bad USB窃取系统哈希的研究
-
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2017/02/12/利用Bad USB窃取系统哈希的研究/" class="post-title-link" itemprop="url">利用Bad USB窃取系统哈希的研究</a>
               
             
           </h1>
@@ -456,7 +457,9 @@
       
 
       
-        <p>一、项目概述<br>项目最初的灵感来源于一篇翻译博客，在博客中技术人员演示了使用Bad USB恶意硬件设备窃取Windows哈希的技术，并称Mac同样能够获取，于是我们希望能够复现并加以改进。<br>但是在实际学习调研的过程中，我们首先发现由于翻译不够负责，与英文原文相比翻译内容对实验结果有夸大，此外由于原本采购的硬件USB Armory驱动支持率过低的问题，我们在后来的研究中也改变了计划，采用了另一款驱动支持率更高的硬件LAN Turtle，并成功获取了Windows NTLM哈希。<br>我们进行了大量的资料调研，也对这两款硬件在国内外的应用进行了深入研究，以下是详细情况。<br>二、Windows加密机制的研究<br>1.NTLM原理<br>在Windows 网络中，NTLM（NT LAN Manager）是一系列旨向用户提供认证，完整性和机密性的微软安全协议。NTLM有NTLMv1和NTLMv2两个版本，NTLMv2在安全上有了很大改进，基本上替代了NTLMv1。<br>虽然Kerberos已经代替NTLM成为活动目录中默认的认证协议，但是NTLM仍然被广泛的应用在客户端无法找到域控制器或者无法访问域控制器的情况下。比如，客户端不支持Kerberos，服务器没有加入域，或者用户是通过网络远程认证时，NTLM都非常有用。<br>1)NTLMv1原理<br>NTLM认证共需要三个消息完成，NTLM是Challenge-Response(质询-响应)验证机制的认证协议。这表示为了认证用户，服务器会发送Challenge给用户，(用户端)然后用户返回一个Response。这个Response是将Challenge，用户密码哈希和其他信息一起通过特定函数计算出来的结果。该函数保证了计算出正确的Response一定需要知道用户的密码（哈希）。(服务器端)服务器（或者该服务器信任的对象，如域控制器）从账户数据库中获得用户密码哈希，然后计算出Challenge对应的正确的Response。(验证)服务器会用该Response与用户返回的Response相比较，假如两值相同，则客户端通过服务器的验证。LM（LAN Manager）和NTLMv1认证协议存在漏洞。<br>2)NTLMv2原理<br>服务器发送给客户端的Challenge是一个8字节的随机数。在NTLMv2版本中，客户端发送给服务器的Response包含LMv2，定长客户端Challenge，NTv2和不定长客户端Challenge。<br>LMv2和NTv2是由服务器Challenge，客户端随机产生的Challenge以及由用户密码和其他身份信息产生的HMAC-MD5哈希值共同产生的HMAC-MD5哈希值。LMv2和NTv2的区别在于客户端随机产生的Challenge。LMv2中该Challenge是8字节的随机数，而NTv2中该Challenge是不定长的。为了让服务器能验证Response，所以需要在Response中加入LMv2和NTv2中使用的客户端Challenge，否则服务器无法产生一样的哈希值。<br>NTv2包含的不定长的客户端Challenge是由当前时间（以NT时间格式表示），8字节随机数，域名和一些标准格式的信息组成。所以，这个Challenge是不定长的。<br>LMv2和NTv2中由用户密码和其他身份信息产生的HMAC-MD5哈希值（v2-Hash）是由NT-Hash，用户名，域名等身份信息产生的HMAC-MD5哈希值。NT-Hash保存在SAM或者AD数据库中。<br>SC = 8字节服务器Challenge<br>CC = 8字节客户端Challenge<br>CC<em> = (X, time, CC, domain name)(X表示标准格式信息,time当前时间，domain name域名)<br>v2-Hash = HMAC-MD5(NT-Hash, user name, domain name)<br>LMv2 = HMAC-MD5(v2-Hash, SC, CC)<br>NTv2 = HMAC-MD5(v2-Hash, SC, CC</em>)<br>Response = LMv2 | CC | NTv2 | CC*<br>2.NTLM面向连接认证流程<br>不同于SMB或者HTTP这种独立的应用协议，NTLM消息是嵌在需要认证用户的应用协议中的。也就是说NTLM是嵌入协议。所以应用协议决定了如何和何时NTLM消息被编码，分帧和传输。<br>NTLM的实现也跟其他普通协议不一样。它由一组可以被其他应用协议调用的函数组成函数库，而不是网络协议栈中的某一层。微软将NTLM函数库实现为安全性支持提供程序（SSP），应用协议通过安全性支持提供程序接口（SSPI）调用它。<br>NTLM函数在处理调用者传递的参数后，返回认证消息。该认证消息放在调用者自己的消息字段中。如果仔细研究该消息，您会发现NTLM认证协议的两种主要变体：面向连接和无连接认证。<br>下图是应用协议创建一个认证会话时，NTLM面向连接认证的调用流程（call flow）：</p>
+        
+          
+            <p>一、项目概述<br>项目最初的灵感来源于一篇翻译博客，在博客中技术人员演示了使用Bad USB恶意硬件设备窃取Windows哈希的技术，并称Mac同样能够获取，于是我们希望能够复现并加以改进。<br>但是在实际学习调研的过程中，我们首先发现由于翻译不够负责，与英文原文相比翻译内容对实验结果有夸大，此外由于原本采购的硬件USB Armory驱动支持率过低的问题，我们在后来的研究中也改变了计划，采用了另一款驱动支持率更高的硬件LAN Turtle，并成功获取了Windows NTLM哈希。<br>我们进行了大量的资料调研，也对这两款硬件在国内外的应用进行了深入研究，以下是详细情况。<br>二、Windows加密机制的研究<br>1.NTLM原理<br>在Windows 网络中，NTLM（NT LAN Manager）是一系列旨向用户提供认证，完整性和机密性的微软安全协议。NTLM有NTLMv1和NTLMv2两个版本，NTLMv2在安全上有了很大改进，基本上替代了NTLMv1。<br>虽然Kerberos已经代替NTLM成为活动目录中默认的认证协议，但是NTLM仍然被广泛的应用在客户端无法找到域控制器或者无法访问域控制器的情况下。比如，客户端不支持Kerberos，服务器没有加入域，或者用户是通过网络远程认证时，NTLM都非常有用。<br>1)NTLMv1原理<br>NTLM认证共需要三个消息完成，NTLM是Challenge-Response(质询-响应)验证机制的认证协议。这表示为了认证用户，服务器会发送Challenge给用户，(用户端)然后用户返回一个Response。这个Response是将Challenge，用户密码哈希和其他信息一起通过特定函数计算出来的结果。该函数保证了计算出正确的Response一定需要知道用户的密码（哈希）。(服务器端)服务器（或者该服务器信任的对象，如域控制器）从账户数据库中获得用户密码哈希，然后计算出Challenge对应的正确的Response。(验证)服务器会用该Response与用户返回的Response相比较，假如两值相同，则客户端通过服务器的验证。LM（LAN Manager）和NTLMv1认证协议存在漏洞。<br>2)NTLMv2原理<br>服务器发送给客户端的Challenge是一个8字节的随机数。在NTLMv2版本中，客户端发送给服务器的Response包含LMv2，定长客户端Challenge，NTv2和不定长客户端Challenge。<br>LMv2和NTv2是由服务器Challenge，客户端随机产生的Challenge以及由用户密码和其他身份信息产生的HMAC-MD5哈希值共同产生的HMAC-MD5哈希值。LMv2和NTv2的区别在于客户端随机产生的Challenge。LMv2中该Challenge是8字节的随机数，而NTv2中该Challenge是不定长的。为了让服务器能验证Response，所以需要在Response中加入LMv2和NTv2中使用的客户端Challenge，否则服务器无法产生一样的哈希值。<br>NTv2包含的不定长的客户端Challenge是由当前时间（以NT时间格式表示），8字节随机数，域名和一些标准格式的信息组成。所以，这个Challenge是不定长的。<br>LMv2和NTv2中由用户密码和其他身份信息产生的HMAC-MD5哈希值（v2-Hash）是由NT-Hash，用户名，域名等身份信息产生的HMAC-MD5哈希值。NT-Hash保存在SAM或者AD数据库中。<br>SC = 8字节服务器Challenge<br>CC = 8字节客户端Challenge<br>CC<em> = (X, time, CC, domain name)(X表示标准格式信息,time当前时间，domain name域名)<br>v2-Hash = HMAC-MD5(NT-Hash, user name, domain name)<br>LMv2 = HMAC-MD5(v2-Hash, SC, CC)<br>NTv2 = HMAC-MD5(v2-Hash, SC, CC</em>)<br>Response = LMv2 | CC | NTv2 | CC*<br>2.NTLM面向连接认证流程<br>不同于SMB或者HTTP这种独立的应用协议，NTLM消息是嵌在需要认证用户的应用协议中的。也就是说NTLM是嵌入协议。所以应用协议决定了如何和何时NTLM消息被编码，分帧和传输。<br>NTLM的实现也跟其他普通协议不一样。它由一组可以被其他应用协议调用的函数组成函数库，而不是网络协议栈中的某一层。微软将NTLM函数库实现为安全性支持提供程序（SSP），应用协议通过安全性支持提供程序接口（SSPI）调用它。<br>NTLM函数在处理调用者传递的参数后，返回认证消息。该认证消息放在调用者自己的消息字段中。如果仔细研究该消息，您会发现NTLM认证协议的两种主要变体：面向连接和无连接认证。<br>下图是应用协议创建一个认证会话时，NTLM面向连接认证的调用流程（call flow）：</p>
 <p>流程如下：<br>1.Application message(s)：表示客户端和服务器之间发送的应用协议消息。<br>2.Application message [NTLM_NEGOTIATE]：客户端在发起认证时，首先向服务器发送Negotiate 协商消息。 协商需要认证的主体，用户，机器以及需要使用的安全服务等等信息。 并通知服务器自己支持的协议内容，加密等级等等Challenge 挑战消息。<br>3.Application message [NTLM_CHALLENGE]：服务器发送NTLM CHALLENGE_MESSAGE消息到客户端。该消息包括商定的安全特性和服务器产生的随机数（Challenge）。服务器在收到客户端的协商消息之后， 会读取其中的内容，并从中选择出自己所能接受的服务内容，加密等级，安全服务等等。 并生成一个随机数challenge, 然后生成challenge消息返回给客户端。<br>4.Application message [NTLM_AUTHENTICATE]：客户端向服务器发送NTLM AUTHENTICATE_MESSAGE消息。该消息包含用户名和Response。这个Response可以证实客户端知道用户的密码。服务器接下来会验证这个Response。假如该用户是本地账户，服务器可以根据本地账户数据库中的信息验证Response。假如该用户是域账户，服务器会将用户认证信息（用户名，服务器发送给客户端的Challenge，客户端发送给服务器的Response）发送给域控制器，由域控制器验证该Response。这时候NTLM协议认证过程完成。<br>5.Application message(s)：如果Challenge和Response证明客户端知道用户密码，那么认证成功。假如认证失败，服务器可能会以某种方式发送认证失败的状态给应用协议，或者单纯的结束连接。</p>
 <p>三、Mac加密机制的研究<br>3.OS X底层加密机制<br>OS X系统有三种加密机制，分别是Mach、BSD、CSDA。其中CSDA已经在OS X v10.7版本以上被弃用，正在迁移到普通加密，不推荐被使用。<br>Mach和BSD均位于OS X最底层，用于存储密码和其他需要加密的信息，并且为其他更高层的加密方式提供支持，如Common Crypto。<br>4.Common Crypto<br>Apple开源加密技术，支持对称加密和非对称加密、散列与其他加密方式<br>5.OS X加密服务<br>重点包括：<br>加密与解密<br>使用keychains的密钥管理<br>基于密码学的强随机数生成<br>安全通信（SSL和TLS）<br>使用FileVault和iOS文件保护的安全存储<br>其中对称加密是使用单个共享密钥用于加密和解密数据；非对称加密则是使用一个密钥加密数据，使用单独但相关的密钥解密数据。使用散列检测数据修改，可以将哈希与非对称密钥相结合创建数字签名，对数字证书进行验证时，能够证明数据来源<br>6.API<br>OS X中提供的API有：<br>钥匙串服务API：用于为密码、密钥提供安全存储<br>加密消息语法：提供对称和非对称加密解密<br>证书、密钥和信任服务<br>钥匙串服务<br>Keychain Services API通常用于将密码，密钥，证书和其他秘密存储在称为钥匙串的特殊加密文件中，主要用于储存密码、密钥和其他短小的数据。OS X中的Keychain Access程序允许用户存储和读取Keychain中的数据。一个应用程序只能访问钥匙串中自己的项目<br>加密消息语法服务<br>允许添加数字签名到S/MIME消息，可用于加密电子邮件等<br>证书、密钥和信任服务<br>提供信任验证和支持，用于管理证书、公钥、私钥、对称密钥和信任策略，可以创建证书和非对称密钥、向钥匙串添加证书和密钥、将其从密钥链中删除并使用密钥对数据进行加密和解密、检索有关证书的信息（例如与其关联的私钥，所有者等）、将证书转换为便携式表示、创建和操作信任策略，并使用指定的一组信任策略评估特定的证书、添加锚证书<br>安全转换<br>在OS X v10.7及更高版本中用于执行对称加密和解密，非对称签名和验证以及Base64编码和解码，此外允许读取文件<br>四、WPAD网络代理自发现协议<br>WPAD即Web Proxy Auto-Discovery Protocol，能够借助DHCP/DNS服务器让浏览器自动发现代理服务，而代理服务对用户来说是透明的，于是能轻松访问互联网<br>1.WPAD概述<br>自动代理检测将由系统确定，Web代理服务器代表客户端发送请求。自动代理检测启动时，会尝试定位到代理发送请求后返回的代理配置文件位置。如果查找到代理配置文件，则会根据相关情况来配置代理服务<br>2.PAC文件<br>PAC即Proxy Auto-Config，是自动代理配置文件，定义了浏览器和其他用户代理如何自动选择适当的代理服务器来访问URL，在本项目中WPAD的应用是我们窃取NTLM Hash的核心。<br>一个PAC文件至少是一个定义了JavaScript函数的文件，核心函数FindProxyForURL(url, host)的具体情况如下：<br>function FindProxyForURL(url, host) {<br>   if (url== ‘<a href="http://www.baidu.com/&#39;" target="_blank" rel="noopener">http://www.baidu.com/&#39;</a>) return ‘DIRECT’;<br>   if (host== ‘twitter.com’) return ‘SOCKS 127.0.0.10:7070’;<br>   if (dnsResolve(host) == ‘10.0.0.100’) return ‘PROXY 127.0.0.1:8086;DIRECT’;<br>   return ‘DIRECT’;<br>由此我们也可以知道，能否顺利实现该功能也与浏览器的相关配置有关</p>
 <p>3.Safari相关情况<br>经过调研大多数浏览器还是支持自动使用PAC与WPAD的，但Safari并不能自动启用。有一种手动为Safari启用WPAD的方法：</p>
@@ -496,6 +499,8 @@
 <h1 id="Start-Responder-1"><a href="#Start-Responder-1" class="headerlink" title="Start Responder"></a>Start Responder</h1><p>/usr/bin/screen -dmS responder bash -c ‘cd /root/responder/; python Responder.py -I usb0 -f -w -r -d -F’<br>exit 0<br>（3）为了让屏幕会话的日志记录启用(可以让你迅速找出问题),你需要添加一个a .screenrc文件。最重要的部分是:<br>/root/.screenrc</p>
 <h1 id="Logging-1"><a href="#Logging-1" class="headerlink" title="Logging"></a>Logging</h1><p>deflog on<br>logfile /root/logs/screenlog_$USER_.%H.%n.%Y%m%d-%0c:%s.%t.log<br>3)遇到的问题<br>抓取哈希成功率较低，理论上每台机器只能通过这种方式获取一次哈希。</p>
 
+          
+        
       
     </div>
 
@@ -516,36 +521,14 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/哈希/" rel="tag"># 哈希</a>
-          
-        </div>
+
+      
+
       
 
       
       
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/02/12/新的文章/" rel="prev" title="新的文章">
-                新的文章 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
+        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -555,15 +538,18 @@
   </article>
 
 
-  </div>
+    
+  </section>
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+  </nav>
+
 
 
           </div>
           
-
-  
-
-
 
         </div>
         
@@ -584,17 +570,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <div class="site-overview-wrap sidebar-panel">
+      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -735,23 +712,6 @@
       </div>
 
       
-      <!--noindex-->
-        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-            
-            
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#interfaces-5-file-used-by-ifup-8-and-ifdown-8"><span class="nav-number">1.</span> <span class="nav-text">interfaces(5) file used by ifup(8) and ifdown(8)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Include-files-from-etc-network-interfaces-d"><span class="nav-number">2.</span> <span class="nav-text">Include files from /etc/network/interfaces.d:</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#If-this-DHCP-server-is-the-official-DHCP-server-for-the-local"><span class="nav-number">3.</span> <span class="nav-text">If this DHCP server is the official DHCP server for the local</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#network-the-authoritative-directive-should-be-uncommented"><span class="nav-number">4.</span> <span class="nav-text">network, the authoritative directive should be uncommented.</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Use-this-to-send-dhcp-log-messages-to-a-different-log-file-you-also"><span class="nav-number">5.</span> <span class="nav-text">Use this to send dhcp log messages to a different log file (you also</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#have-to-hack-syslog-conf-to-complete-the-redirection"><span class="nav-number">6.</span> <span class="nav-text">have to hack syslog.conf to complete the redirection).</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#wpad"><span class="nav-number">7.</span> <span class="nav-text">wpad</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#A-slightly-different-configuration-for-an-internal-subnet"><span class="nav-number">8.</span> <span class="nav-text">A slightly different configuration for an internal subnet.</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Clear-leases"><span class="nav-number">9.</span> <span class="nav-text">Clear leases</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Start-DHCP-server"><span class="nav-number">10.</span> <span class="nav-text">Start DHCP server</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Start-Responder"><span class="nav-number">11.</span> <span class="nav-text">Start Responder</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Logging"><span class="nav-number">12.</span> <span class="nav-text">Logging</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Start-DHCP-server-1"><span class="nav-number">13.</span> <span class="nav-text">Start DHCP server</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Start-Responder-1"><span class="nav-number">14.</span> <span class="nav-text">Start Responder</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Logging-1"><span class="nav-number">15.</span> <span class="nav-text">Logging</span></a></li></ol></div>
-            
-
-          </div>
-        </div>
-      <!--/noindex-->
-      
 
       
 
@@ -878,10 +838,6 @@
 
 
   
-  <script src="/js/src/scrollspy.js?v=7.0.0"></script>
-<script src="/js/src/post-details.js?v=7.0.0"></script>
-
-
 
   
 
@@ -892,8 +848,6 @@
 
   
 
-
-  
 
 
   
