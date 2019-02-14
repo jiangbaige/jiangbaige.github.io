@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="Record learning notes at any time">
+  <meta name="description" content="1总设计方案1.1设计背景及意义本设计作品针对传统的测温仪器自身存在的诸多缺点以及在现实生活中所暴露的使用不便，缺少安全性等缺陷，提出了一种非接触式红外测温系统设计方案。该设计作品是基于以15F2K61S2芯片为核心的51stc单片机，使用红外测温传感器测量和传输数据。该系统最大的创新之处在于实现基本的非接触式温度测量功能，它的安全性，方便性更有利于普通百姓的使用。本次红外测温系统的设计简化了电路">
 <meta name="keywords" content="FPGA,红外测温传感器">
 <meta property="og:type" content="article">
 <meta property="og:title" content="利用红外测温传感器设计红外测温仪">
 <meta property="og:url" content="http://yoursite.com/2017/05/13/利用红外测温传感器设计红外测温仪/index.html">
 <meta property="og:site_name" content="jiangbaige&#39;s blogs">
-<meta property="og:description" content="Record learning notes at any time">
+<meta property="og:description" content="1总设计方案1.1设计背景及意义本设计作品针对传统的测温仪器自身存在的诸多缺点以及在现实生活中所暴露的使用不便，缺少安全性等缺陷，提出了一种非接触式红外测温系统设计方案。该设计作品是基于以15F2K61S2芯片为核心的51stc单片机，使用红外测温传感器测量和传输数据。该系统最大的创新之处在于实现基本的非接触式温度测量功能，它的安全性，方便性更有利于普通百姓的使用。本次红外测温系统的设计简化了电路">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-02-14T23:15:53.063Z">
+<meta property="og:updated_time" content="2019-02-14T23:21:27.468Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="利用红外测温传感器设计红外测温仪">
-<meta name="twitter:description" content="Record learning notes at any time">
+<meta name="twitter:description" content="1总设计方案1.1设计背景及意义本设计作品针对传统的测温仪器自身存在的诸多缺点以及在现实生活中所暴露的使用不便，缺少安全性等缺陷，提出了一种非接触式红外测温系统设计方案。该设计作品是基于以15F2K61S2芯片为核心的51stc单片机，使用红外测温传感器测量和传输数据。该系统最大的创新之处在于实现基本的非接触式温度测量功能，它的安全性，方便性更有利于普通百姓的使用。本次红外测温系统的设计简化了电路">
 
 
 
@@ -404,7 +404,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-02-15 07:15:53" itemprop="dateModified" datetime="2019-02-15T07:15:53+08:00">2019-02-15</time>
+                <time title="修改时间：2019-02-15 07:21:27" itemprop="dateModified" datetime="2019-02-15T07:21:27+08:00">2019-02-15</time>
               
             
           </span>
@@ -456,7 +456,175 @@
       
 
       
-        
+        <p>1总设计方案<br>1.1设计背景及意义<br>本设计作品针对传统的测温仪器自身存在的诸多缺点以及在现实生活中所暴露的使用不便，缺少安全性等缺陷，提出了一种非接触式红外测温系统设计方案。该设计作品是基于以15F2K61S2芯片为核心的51stc单片机，使用红外测温传感器测量和传输数据。该系统最大的创新之处在于实现基本的非接触式温度测量功能，它的安全性，方便性更有利于普通百姓的使用。本次红外测温系统的设计简化了电路结构，提高了测温的稳定性及可靠性。该系统的反应速度快、传输效率高、测量精度高、可靠性高等优点，将会在和传统测温仪器的竞争中脱颖而出，在不久的将来一定会具有广阔的市场前景。<br>随着经济的发展，社会生活水平的提高，人们对自身身体情况愈来愈重视。体温是人体生命活动最基本的特征，也是观察人体机能是否正常的重要指标之一[1]。但是在现实生活中，伴随着生活节奏的变快，父母在忙碌的工作状态下抽出时间帮助孩子测体温是一件非常麻烦的事，而且由于儿童不像成年人一样配合，比较好动，测温过程既耗费时间又费精力；老年人活动不便，使用传统的体温计也很不方便，由于人老眼花，不能特别方便地看清体温计汞柱的位置；尤其是在夜间，使用该体温计对体温进行实时监测，可以减少夜间陪护，同时又防止晚上突发高烧。现在各种流行病比较多，传染性比较强，传统的接触式测温系统有很大的局限性，特别是在高发病的场所诸如学校或者客运中心等等[2]。</p>
+<p>1.2发展趋势<br>目前市面上存有的家用测量体温仪主要有水银温度计，电子体温计两种，虽然都能满足人们对体温测量的要求，但是随着人们对测温结果精确值的提高，对仪器各方面要求的提高[3]，传统的测温仪器存在的缺陷开始被人们所认识，测量准确度低，等待时间长，使用不当还会发生意想不到的事故等[4]。<br>非接触式红外测温系统的开发，将能很好的代替传统测温仪器，弥补他们的不足与使用的不便[5]。它的响应时间快、非接触、使用安全及使用寿命长等优点，更适合儿童在平时的生活中独立完成体温测量[6]。<br>在日常生活中，测量体温的仪器主要有水银温度计，电子体温仪两种。水银体温计应该是人们接触最早的一款体温测量仪器，它是根据水银的热胀冷缩性质，通过读取刻度值来判断温度值，然而它有着诸多缺点，比如在使用过程中，仪器必须要和被测量者接触，而且最终测量结果的产生需要较长的时间[7]；仪器是很薄的玻璃管，所以其极易破碎，同时水银蒸汽（汞）是一种具有强烈毒性的物质，对人体有着巨大的危害，如果不小心飞溅出来，造成人身危害，发生非常严重的事故。由此可见，水银体温计对于特殊群体，尤其是儿童有着非常大的局限性 [8]。另一种温度计是之后出现的电子温度计，它是利用了半导体电阻随温度变化而变化的特征，通过液晶显示器来显示人体的温度，其最大的不足之处在于最终的显示值的准确度会受电子元件及电池供电状况等因素的影响，从而不利于体温的准确测量。总的来说，传统的测温计还是存在着一些难以克服的缺陷[9]。<br>当今社会，红外测温技术已在工业、石化、农业、医学、安全监控与防范和科学研究等领域被广泛地应用，衍变成自动控制、在线监测、非接触测量、设备故障诊断、资源勘查、遥感测量、环境污染监测分析、人体医学影像检查等重要方法[10]。在传统的测温系统中注入现代科技的元素，它所具备的响应时间快、非接触、使用安全及使用寿命长等优点，较传统温度仪器更加能满足人们生活生产的需求，必定会占领相当大的市场，受到人们的青睐[11]。<br>根据世界预测公司Frost &amp; Sullivan的预测，世界温度传感器市场将由1998年的17.4亿美元增长到2012年的3386亿美元，这一增长速度还将持续[14]。将温度传感器作成一个测温仪器，其价值至少增长10倍，而作成一个测量控制系统，其价值至少增大20倍。按这个情况下去，如果能占领市场的1%，就是30亿美元！由此可见，红外测温仪的未来发展前景一片光明[14]！近20年来，我国的红外测温技术得到迅速的发展,并逐步应用于医疗、工业等领域，比如红外检测技术，它是一种在线监测不停电式高科技检测技术，能对电气设备的故障缺陷及绝缘性能做出可靠的预测，满足了现代电力企业对电力系统的可靠运行的要求[15]。红外检测技术的应用，对提高电气设备的可靠性与有效性，提高运行经济效益，降低维修成本都有很重要的意义。另外,红外测温技术还可用于炉温检测、压延钢板的温度分布的测定等。<br>1.3设计总体方案及可行性分析<br>根据设计要求，整个系统有5个部分构成：单片机15F2K61S2，数码管显示电路，按键控制电路，报警电路，红外温度传感器。<br>方案设计的目的是为了使软件编程更为简单，测量精度更高，实现起来更加容易，测温范围更广。<br>1、先进性<br>温度计采用了红外感应系统，红外装置具有体积小，功耗低，功能强，成本低等特点，而且在高压，辐射等环境下，采用红外装置不仅可以完全可靠而且能有效的隔离电气干扰，使所设定的功能更加准确高效的实现。<br>2、实用性<br>红外温度传感器与传统水银体温计相比，采集温度的能力更强，响应时间短，测量精度高，更安全，不必担心因为水银泄漏而造成的人体伤害和环境污染。<br>3、创新性<br>红外温度计其设计内容涵盖了控制、模式识别、传感技术、计算机、机械等多个学科的知识，考虑了安全性、便携性等多种因素。<br>2非接触式红外测温数显系统硬件电路设计<br>2.1非接触式红外测温数显系统基本原理与构成<br>2.1.1非接触式红外测温系数显统基本原理<br>本系统通过红外测温传感器GY_MCU90615收集红外辐射能量，单片机对传感器读取数据，数据经过单片机进行处理，再传送到led数码管显示器上，显示温度值。当温度值大于初始设置的上限值时，LED灯亮并且蜂鸣器发出报警声，提示人们温度过高；当温度值小于初始设置的下限值时，LED灯亮并且蜂鸣器发出报警声，提示人们温度过低；当温度处于下限值与上限值之间时，正常显示温度。按键按钮能够设置温度上限值和下限值。本设计只需要将红外探测头对准人的头部，就能测量出人体的温度，显示led数码管显示器上。</p>
+<p>2.1.2非接触式红外测温数显系统构成<br>本系统的硬件电路设计以STC15F2K61S2单片机为核心，外围主要包括：GY_MCU90615红外传感器模块，LCD1602显示模块，功能按键、晶振电路和复位电路组成。如图2-1所示。<br>系统整体框图</p>
+<p>2.2单片机的主控电路<br>2.2.1 15F2K61S2芯片简介</p>
+<p>2.2.2 主控电路<br>STC系列芯片有5组8位输入口，分别为P0到P5，其中P5口仅P5.0~P5.5用于输入输出。STC芯片的所有I/O口都可以配置为四种工作模式之一：准双向口/弱上拉、推挽/强上拉、输入/高阻和开漏模式。STC15系列单片机上电复位后为准双向口/弱上拉工作模式。<br>每个I/O口的工作模式由2个控制寄存器中的相应位控制（PnM0和PnM1，n=0、1、2、3、4、5）。也就是说P0口的具体工作模式由P0M0和P0M1控制。具体赋值方法参照表1。<br>表1 I/O口工作模式设置</p>
+<p>其他I/O口工作模式设置类似。<br>四种工作模式的说明：<br>（1）准双向口。真正的双向口指的是具有输入和输出两种模式的端口，在不同模式之间需要进行转换；如果从输入改为输出，需要对某些控制寄存器进行设定，才能完成。而51系列单片机的I/O口线在输入和输出之间没有明确的模式区别。相应端口在同样模式下，既可以作为输入，又可以作为输出。P3口除外，因为它需要连接外设。51单片机的I/O口如果要读必须先写1才可以，因此称为“准”双向口。需要大电流高电平输出能力的场合和高速场合不能使用该模式。<br>（2）推挽电路输入输出（push-pull）模式。推挽电路的输出端好像有两个“臂”（两组放大元件），一个“臂”的电流增加时，另一个“臂”的电流则减小，二者的状态轮流转换。对负载而言，好象是一个“臂”在推，一个“臂”在拉，共同完成电流输出任务。该电路模式的主要作用是增强驱动能力，为外部设备提供大电流，可以直接输出高电平电压。<br>（3）输入/高阻模式。仅用于输入。<br>（4）开漏电路。I/O口的开漏就是没有连接上拉电阻。</p>
+<p>2.3非接触式红外测温传感器模块电路设计<br>2.3.1 GY_MCU90615红外测温模块<br>GY-MCU90615 是一款低成本红外温度模块。工作电压 3-5v 功耗小，体积小。其工作原理， 是通过单片机读取。红外温度度数据，串口（ TTL 电平），通信方式输出。串口的波特率有 9600bps 与 115200bps。有连续输出与询问输出两种方式，可适应不同的工作环境，与所有的单片机及电脑连接<br>2.3.2红外测温传感器原理<br>红外测温传感器主要由红外热电堆传感器、低噪声放大器、16位模数转换器和功能强大的DSP 单元等组成，其结构框图如图2所示。红外热电堆传感器将采集到的红外辐射转化为电信号， 并经过低噪声放大器放大后送给模数转换器。模数转换器输出的数字信号经FIR/IIR 低通滤波器调理后送入数字信号处理器，数字信号处理器对数字信号运算处理后输出测量结果并保存在MLX90615 内部RAM 中，可以通过SMBus或PWM方式供主控CPU 单元读取。</p>
+<p>2.3.3红外测温模块的引脚说明<br>Pin1    VCC    电源+ （ 3v-5v）<br>Pin2    GND    电源地<br>Pin3    TX    串口数据发送 TXD<br>Pin4    RX    串口数据接收 RXD<br>Pin5    RST    内部使用，不需要连接，悬空<br>Pin6    SIM    内部使用，不需要连接，悬空</p>
+<p>2.3.4 红外测温模块通信协议<br>串口发送命令字节：<br>1、串口通信参数（默认波特率值 115200 bps，可通过软件设定<br>波特率： 9600 bps 校验位：      N 数据位： 8 停止位： 1<br>波特率： 115200 bps 校验位： N 数据位： 8 停止位： 1<br>2、模块输入命令，由外部控制器发送至 GY-MCU90615 模块（十六进制）<br>（1）帧头： 0xa5<br>指令格式：帧头+指令+校验和(8bit)（如自动读取温度指令=0xA5+0x45+0xEA）（2）命令指令：<br>连续输出指令：<br>0xA5+0x45+0xEA—————-温度数据（模块返回数据类型为 0x45）<br>查询输出指令：<br>0xA5+0x15+0xBA —————温度数据（模块返回数据类型为 0x45）<br>配置指令： (掉电重启后生效)<br>波特率配置：<br>0xA5+0xAE+0x53 —————9600<br>0xA5+0xAF+0x54 —————115200（默认）<br>上电是否自动发送温度数据配置：<br>0xA5+0x51+0xF6—————上电后自动输出温度数据<br>0xA5+0x52+0xF7—————上电后不自动输出温度数据(默认)<br>0xA5+0xAF+0x54 —————115200（默认）</p>
+<p>串口接收：<br>1、串口通信参数（默认波特率值 115200 bps，可通过软件设定）<br>波特率： 9600 bps 校验位： N 数据位： 8 停止位： 1<br>波特率： 115200 bps 校验位： N 数据位： 8 停止位： 1<br>2、模块输出格式，每帧包含 9 个字节（十六进制）：<br>①.Byte0: 0x5A 帧头标志<br>②.Byte1: 0x5A 帧头标志<br>③.Byte2: 0X45 本帧数据类型（ 0X45：温度数据）<br>④.Byte3: 0x04 数据量（以下 4 个数据 2 组为例）<br>⑤.Byte4: 0x00~0xFF 数据 1 高 8 位<br>⑥.Byte5: 0x00~0xFF 数据 1 低 8 位<br>⑦.Byte6: 0x00~0xFF 数据 2 高 8 位<br>⑧.Byte7: 0x00~0xFF 数据 2 低 8 位<br>⑨.Byte8: 0x00~0xFF 校验和（前面数据累加和，仅留低 8 位）<br>3、数据计算方法<br>温度计算方法 ：<br>温度= 高 8 位&lt;&lt;8|低 8 位（结果为实际角度乘以 100）<br>例：发送指令： A5 45 EA ，接收到一帧数据：</p>
+<p><5a- 5a-="" 45-="" 04-="" 0c-="" 78-="" 0d-="" 19-="" a7=""><br>表示 TO（有符号 16bit，表示目标温度）： TO=0x0C78/100=31.92 ℃<br>表示 TA（有符号 16bit，表示环境温度）： TO=0x0D19/100=33.53 ℃<br>2.3.5 红外测温模块电路</5a-></p>
+<p>2.4 51STC单片机数码管显示电路</p>
+<p>P0口的8位输出分别控制1个LED数码管的7段和一个小数点；而P2.3经反相器U4C控制74HC138的使能信号E3，结合P2.0、P2.1、P2.2这3个位选控制信号确定8个LED数码管中的哪个被点亮；电阻R15～R22为限流电阻。当段选为高、使能信号有效时，对应的LED管将会发光。通过以一定频率扫描位选信号，修改段选信号进行数码管点亮一段时间，从而给人视觉上几个数码管几乎同时显示的效果。</p>
+<p>LED数码管显示电路</p>
+<p>2.5 按键电路设计<br>当按键被按下的时候，电路导通接地，I/O口为低电平；当按键未被下时，电路断开，I/O口保持高电平的。<br>按键电路示意图<br>（三个按键分别是K1、K2、K3）</p>
+<p>导航按键与数字按键K1,K2的区别在于导航按键是通过ADC采集电压的改变从而判断按下的方向，而数字按键是通过电平的直接改变判断是否按下。<br>A/D转换时导航按键高三位和低五位值对照表<br>操作    高三位    低五位参考值（实际值）<br>无操作    7    31（可能值：0-31）<br>按住Key3    0    00（可能值：0-31）<br>向右    1    06（可能值：0-31）<br>向下    2    12（可能值：0-31）<br>向里    3    17（可能值：0-31）<br>向左    4    22（可能值：0-31）<br>向上    5    25（可能值：0-31）</p>
+<p>2.6 51STC单片机其它硬件电路</p>
+<p>2.6.1 51STC单片机的电源电路<br>由于该系统需要稳定的5 V电源，因此必须采用能满足电压、电流和稳定性要求的电源。设计采用外部的5V电源供电，在电源两端并连上了两个电容（如下图）。</p>
+<p>设计中外部供电采用的是Mini-usb（B型）接口，由于并没有用到数据的传输，只是单纯供电，所以设计中只用到了Pin 1（V Bus）和Pin 5（GND）。</p>
+<p>对系统供电的设计，可采用以下方法：直流稳压电源，单片机开发板，迷你USB接口；其中利用迷你USB接口供电可以通过手机充电器、电脑USB接口等，可以让温度计在使用起来更方便，这也是本设计中的特点之一。</p>
+<p>2.6.2 51STC单片机晶振电路<br>项目所用的单片机采用有源晶振。有源晶振是一个完整的谐振振荡器，它是利用石英晶体的压电效应来起振，所以有源晶振需要供电，当我们把有源晶振电路做好后，不需要外接其它器件，只要给它供电，它就可以主动产生振荡频率，并且可以提供高精度的频率基准，信号质量也比无源信号要好。</p>
+<p>2.6.3复位电路的设计<br>单片机的复位是靠外部电路实现的。单片机工作后，只要在它的RESET引线上加载10ms以上的高电平，单片机就能有效地复位。<br>上电复位：上电复位电路是—种简单的复位电路，只要在RST复位引脚接一个电容到VCC，接一个电阻到地就可以了。上电复位是指在给系统上电时，复位电路通过电容加到RST复位引脚一个短暂的高电平信号，这个复位信号随着VCC对电容的充电过程而回落，所以RST引脚复位的高电平维持时间取决于电容的充电时间。为了保证系统安全可靠的复位，RST引脚的高电平信号必须维持足够长的时间。</p>
+<p>3 51STC单片机软件设计及项目使用介绍<br>3.1软件编译KeilC51开发环境<br>51单片机的编译开发环境有很多。像国外著名的Keil和国产的WAVE等。在这次项目中选择采用Keil开发环境。<br>Keil C51是美国Keil Software公司出品的51系列兼容单片机C语言软件开发系统，当然汇编语言也可以使用。Keil提供了包括C编译器、宏汇编、连接器、库管理和一个功能强大的仿真调试器等在内的完整开发方案，通过一个集成开发环境（uVision）将这些部分组合在一起。运行Keil软件需要Windows 98、Windows NT、Windows 2000、Windows XP、Windows 7、Windows 8等操作系统。如果你使用的是C语言编程，那么Keil是最佳选择，即使使用汇编语言编程，其方便易用的集成环境、强大的软件仿真调试工具也会令你事半功倍。</p>
+<p>3.2系统软件设计要求及任务<br>系统主程序的功能是读出和处理GY-MCU90615测量出的温度值，并实现温度值在数码管上的显示，非正常温度时发出警报。红外线体温计的功能的实现主要是由软件配合硬件电路来完成的。根据软件的作用，可以分成两类：主程序（监控软件）和子程序（执行软件）。其中主程序主要负责协调操作者和各个执行模块间的关系，它是整个控制系统的核心，子程序则是负责完成各种实际的功能，比如通信、计算、测量、显示、警报等。首先需要根据电子体温计的整体功能选择合适的监控代码结构，然后根据其实时性的特点，将各个执行模块与监控软件之间的调度关系安排得更加合理。</p>
+<p>3.3系统主程序流程图</p>
+<p>3.4系统程序关键代码设计<br>void Init()：<br>函数void Init()主要是对发光二极管电路进行初始化设置，只要将P0口和P2.3工作模式设置为推挽输出，同时将P2.3置“1”，使能发光二极管电路即可。其中对P0口和P2口的工作模式设置，可通过设置对应的P0口模式配置寄存器和P2口模式配置寄存器来实现。（具体细节请参照STC15F2K60S2数据手册）</p>
+<p>void delayxms(int x)：<br>函数delayxms（int x）实现的是延时x毫秒的功能，但是延时的时间可能不是很准确。单片机工作时，是在统一的时钟脉冲控制下有序进行的。这个脉冲是由单片机控制器中的时钟电路产生的。时钟电路由振荡器和分频器组成，振荡器产生基本的振荡信号，然后进行分频，得到相应的时钟。振荡电路通常有内部振荡和外部振荡两种方式。STC15F2K60S2单片机内部集成高精度R/C时钟，工作时钟可以使用内部振荡器或者外部晶体振荡器（简称晶振）产生的时钟。外部振荡信号通过内部时钟电路，经过分频，得到相应的时钟信号。</p>
+<p>图2外部振荡模式工作原理示意图<br>unsigned char Keycheck()：导航按键检测<br>unsigned char GetADC()：获取导航按键AD转换值、<br>void control_KEY() ：按键选择测量模式<br>void ChangeTemper()：改变设置的初始温度</p>
+<p>3.5系统子程序流程图</p>
+<p>3.4.1功能按键流程图</p>
+<p>3.4.2红外测温流程图</p>
+<p>4 系统测试<br>3.1 测试方案<br>1、硬件测试<br>把系统板分为几个部分，分别单独测试，然后再整体测试。<br>2、软件仿真测试<br>利用软件仿真，分别实现温度测试，按键测试。<br>3、软件硬件联合测试<br>把程序下载到51单片机上，进行系统测试。<br>具体操作：将写好的C程序通过单片机开发板下载到51STC单片机上，再将红外温度传感器安装在单片机上，供电，操作按键看是否能进行测温等功能。<br>3.2 测试条件与仪器<br>    测试条件：检查多次，仿真电路和硬件电路必须与系统原理图完全相同，并且检查无误，硬件电路保证无虚焊。<br>硬件测试仪器：万用表，直流稳压电源、示波器、单片机开发板；</p>
+<p>附录A</p>
+<p>#include “STC15F2K60S2.H”</p>
+<p>#include &lt;intrins.h&gt;              //<em>cror</em>();</p>
+<p>#define uint unsigned int</p>
+<p>#define ulint unsigned long</p>
+<p>#define S2RI 0x01    //接收中断请求标志位</p>
+<p>#define S2TI 0x02    //发送中断请求标志位</p>
+<p>sbit LED_sel=P2^3;  //灯或数码管选择位<br>int count=0;</p>
+<p>/<strong><strong>***</strong></strong>按键<strong><strong>**</strong></strong>/</p>
+<p>#define NMAX_KEY 100  //100次读取按键值<br>bit Key1_P;                //key1前一个状态<br>bit Key2_C;                //key2当前的状态<br>bit Key2_P;                //key2前一个状态<br>bit Key3_C;                //key3当前的状态<br>bit Key3_P;                //key3前一个状态</p>
+<p>sbit Key1 = P3^2;<br>sbit Key2 = P3^3;<br>sbit Key3 = P1^7;</p>
+<p>int Key1_count;<br>int Key2_count;<br>int Key3_count;<br>int Key_count;</p>
+<p>/<strong><strong>***</strong></strong>GY-MCU90615v1模块 定义变量<strong><strong><strong>**</strong></strong></strong>/<br>unsigned char   BUF[15];          //数据缓冲区<br>unsigned char   cnt=0;           //接受数据的累积值<br>unsigned char   sign=0;<br>int YPR[3];</p>
+<p>int a[]={1,5,0,10,1,5,0,0,0,0,0};<br>/<strong><em>**</em></strong> 数码管显示内容定义<strong>**</strong>/</p>
+<p>#define Mintemper_shi          a[0]   //设置最小初始温度 十位0~9</p>
+<p>#define Mintemper_ge           a[1]   //设置最小初始温度 个位0~9</p>
+<p>#define Mintemper_xiaoshu a[2]   //设置最小初始温度 小数0~9</p>
+<p>#define dis               a[3]</p>
+<p>#define Maxtemper_shi          a[4]   //设置最大初始温度 十位0~9</p>
+<p>#define Maxtemper_ge          a[5]   //设置最大初始温度 个位0~9</p>
+<p>#define Maxtemper_xiaoshu a[6]   //设置最大初始温度 小数0~9</p>
+<p>#define temper_shi            a[7]   //实际测量温度十位</p>
+<p>#define temper_ge             a[8]   //实际测量温度个位</p>
+<p>#define temper_xiaoshu1   a[9]   //实际测量温度 十分位</p>
+<p>#define temper_xiaoshu2   a[10]  //实际测量温度 百分位</p>
+<p>/<strong><strong>**</strong></strong>蜂鸣器<strong><strong>*</strong></strong>/<br>sbit beep=P3^4;   //蜂鸣器引脚<br>bit flag_beep=0;<br>int choose_beep=0; //选择是哪种响声<br>int count_beep=0;  //计数响的时间</p>
+<p>bit flag_1ms=0;     //1ms标志<br>bit flag_500ms=0;     //0.5s标志<br>int count_100us=0;   //用于中断计时<br>int count_1ms=0;     //用于计时1ms个数<br>int shan_wei=0;      //记录调节哪一位的数码管  为9时哪一位都不调节<br>bit flag_change=0;   //标志位 是否改初始温度值<br>bit Key3_flag=0;     //标志位 是否开始<br>int flag_switch;   //模式选择 测体温/环境温度</p>
+<p>/<strong><strong>**</strong></strong>导航按键ADC<strong><strong>*</strong></strong>/</p>
+<p>#define ADC_POWER 0X80         /<em>ADC电源开关</em>/</p>
+<p>#define ADC_FLAG 0X10          /<em>当A/D转换完成后，ADC_FLAG要软件清零</em>/</p>
+<p>#define ADC_START 0X08         /<em>当A/D转换完成后，ADC_START会自动清零，所以要开始下一次转换，则需要置位</em>/</p>
+<p>#define ADC_SPEED_90 0X60     /<em>ADC转换速度 90个时钟周期转换一次</em>/</p>
+<p>#define ADC_CHS1_7 0X07         /<em>选择P1.7作为A/D输入</em>/</p>
+<p>/<strong><strong>***</strong></strong>温度<strong><strong>***</strong></strong>/<br>uint time=0;          //温度AD转换次数<br>uint count_temp=0;    //执行温度的次数<br>ulint sumt=0;                //温度AD值的总和<br>uint date_temp;<br>int temp=0;                    //温度值</p>
+<p>/<strong><strong>*</strong></strong>函数定义<strong><strong>***</strong></strong>/<br>void Init();  //Initial<br>void Delayxms(int x);        <a href="mailto://@11.0592MHz" target="_blank" rel="noopener">//@11.0592MHz</a>  延时xms<br>void InitADC();         //初始化ADC<br>void InitADC_temp();        //初始化温度ADC<br>unsigned char GetADC(); //获取导航按键AD转换值<br>unsigned char Keycheck(); //导航按键检测<br>void ChangeTemper();     //改变设置的初始温度<br>void Display0();          //每隔1ms显示一位<br>void Display1();          //每隔1ms显示一位</p>
+<p>//延时函数<br>void Delayxms(int x)        <a href="mailto://@11.0592MHz" target="_blank" rel="noopener">//@11.0592MHz</a>  延时xms<br>{<br>    unsigned char i, j;<br>    i = 2*x;<br>    j = 199;<br>    do<br>    {<br>        while (–j);<br>    } while (–i);<br>}</p>
+<p>//初始化导航按键ADC<br>void InitADC()<br>{<br>    P1ASF = 0x80;        //P1.6作为模拟功能A/D使用<br>    ADC_RES = 0;        //转换结果清零<br>    ADC_CONTR = 0x8b;    //ADC_POWER = 1<br>    CLK_DIV=0X00;       //ADRJ = 0      ADC_RES存放高八位结果<br>}<br>//获取导航按键AD转换值<br>unsigned char GetADC()<br>{<br>    unsigned char adc_res;<br>    ADC_CONTR = ADC_POWER | ADC_START | ADC_SPEED_90 | ADC_CHS1_7;//没有将ADC_FLAG置1，用于判断A/D是否结束<br>    while(!(ADC_CONTR&amp;ADC_FLAG));            //ADC_FLAG置1时ADC_CONTR&amp;ADC_FLAG结果为1  这句目的是等待直到A/D转换结束<br>    ADC_CONTR &amp;= ~ADC_FLAG;                 //ADC_FLAGE软件清0<br>    adc_res = ADC_RES;                         //获取AD的值<br>    return adc_res;<br>}</p>
+<p>/<strong><strong>导航按键检测*</strong></strong>/<br>unsigned char Keycheck()<br>{<br>    unsigned char key;<br>    key=GetADC();       //获取AD的值<br>    if(key!=255)        //有按键按下时<br>    {<br>        Delayxms(5);<br>        key=GetADC();<br>        if(key!=255)                  //按键消抖 仍有按键按下<br>        {<br>             key=key&0xE0;            //获取高3位，其他位清零<br>        key=<em>cror</em>(key,5);        //循环右移5位 获取A/D转换高三位值，减小误差<br>            return key;<br>        }<br>    }<br>    return 0x07;        //没有按键按下时返回值0x07<br>}</p>
+<p>/<strong>*按键选择测量模式</strong>/<br>void control_KEY()<br>{<br>    if(Key1==0)<br>            Key1_count–;<br>    if(Key2==0)<br>            Key2_count–;<br>    if(Key3==0)<br>            Key3_count–;<br>    Key_count–;<br>            if(Key_count==0)<br>            {<br>                if(Key1_count&lt;0x80)<br>                {<br>                    if(Key1_P==1)            //下降沿（按键做动作）<br>                    {<br>                        Key1_P=0;<br>                        //flag_start=1;<br>                  flag_switch=1;<br>                    }<br>                }<br>                if(Key1_count&gt;=0x80)<br>                {<br>                    if(Key1_P==0)<br>                       Key1_P=1;            //上升沿（假设不做动作那就继续）<br>                }</p>
+<pre><code>    if(Key2_count&lt;0x80)
+    {
+        Key2_C=0;
+        if(Key2_P==1)            //下降沿（按键做动作）
+        {
+            Key2_P=0;
+            flag_switch=2;
+        }
+    }
+    if(Key2_count&gt;=0x80)
+    {
+        Key2_C=1;
+        if(Key2_P==0)
+           Key2_P=1;            //上升沿（假设不做动作那就继续）
+    }
+
+    //新一轮的判断
+    Key1_count=0x80+NMAX_KEY/3*2;
+    Key2_count=0x80+NMAX_KEY/3*2;
+    Key3_count=0x80+NMAX_KEY/3*2;
+    Key_count=NMAX_KEY;
+}
+</code></pre><p>}</p>
+<p>void ChangeTemper()   //改变设置的初始温度<br>{<br>   char KEY_C;        //导航按键当前的状态<br>     char KEY_P;        //导航按键前一个状态<br>     KEY_C = Keycheck();        //获取当前ADC值<br>     if(KEY_C != 0x07)<br>     {         //导航按键是否被按下 不等于0x07表示有按下<br>         KEY_P = KEY_C;<br>         while(KEY_C!=0x07)            //等待导航按键松开<br>            KEY_C = Keycheck();<br>         switch(KEY_P)<br>       {<br>          case 0x01:        //右键，调节显示温度的数码管位右移<br>              shan_wei++;<br>            if(shan_wei==7)<br>                  shan_wei=0;<br>          break;<br>          case 0x04:        //左键 调节显示温度的数码管位左移<br>                  shan_wei–;<br>              if(shan_wei==-1)<br>                  shan_wei=6;<br>          break;<br>          case 0x05:        //上键 当前闪烁位值+1<br>              if(flag_change)<br>                {<br>                  a[shan_wei]++;<br>                if(a[shan_wei]&gt;=10)<br>                    a[shan_wei]=0;<br>                }<br>          break;<br>          case 0x02:        //下键 当前闪烁位值-1<br>              if(flag_change)<br>                {<br>                a[shan_wei]–;<br>                if(a[shan_wei]==-1||a[shan_wei]&gt;=10)<br>                    a[shan_wei]=9;<br>                }<br>          break;<br>          case 0x03:                    //向里按 是否允许调整温度初始值<br>              flag_change=!flag_change;;<br>          break;<br>            case 0x00:<br>              flag_switch=3;//!Key3_flag;<br>          break;<br>    }<br>     }<br>}</p>
+<p>//初始化推挽<br>void Init()<br>{<br>    //设置推挽输出<br>    P0M0=0xff;<br>    P0M1=0x00;<br>    P0=0;</p>
+<pre><code>P2M0=0xff;
+P2M1=0x00;
+LED_sel=1;  
+</code></pre><p>}</p>
+<p>//初始化按键<br>void Init_Key()<br>{<br>   flag_switch=0;<br>   /<em>初始化所有按键的当前状态、前一个状态</em>/<br>    Key1_P=1;                            //key2前一个状态<br>    Key2_C=1;                            //key2当前的状态<br>    Key2_P=1;                            //key2前一个状态<br>    Key3_C=1;                            //key3当前的状态<br>    Key3_P=1;                            //key3前一个状态<br>    Key1_count=0x80+NMAX_KEY/3<em>2;<br>    Key2_count=0x80+NMAX_KEY/3</em>2;<br>    Key3_count=0x80+NMAX_KEY/3*2;<br>    Key_count=NMAX_KEY;<br>}</p>
+<p>//定时器0初始化  100us 16可重载   用于显示<br>void Timer0Init(void)        //100微秒@11.0592MHz<br>{<br>  AUXR &amp;= 0x7F;        //定时器时钟12T模式<br>    TMOD &amp;= 0xF0;        //设置定时器模式<br>    TL0 = 0xA4;          //设置定时初值<br>    TH0 = 0xFF;          //设置定时初值<br>    TF0 = 0;            //清除TF0标志<br>    TR0 = 1;            //定时器0开始计时.<br>    ET0=1;          //开启定时器中断<br>    EA=1;           //打开总的中断</p>
+<p>}<br>/<em>100us 16可重载  定时器1  用于发出两种声音</em>/<br>void Timer1Init()        //100微秒@11.0592MHz<br>{<br>    AUXR |= 0x40;        //定时器时钟1T模式<br>    //TMOD &amp;= 0xfF;    //设置定时器模式<br>    TL1 = 0x00;          //设置定时初值<br>    TH1 = 0xFB;          //设置定时初值<br>    TF1 = 0;            //清除TF0标志<br>    TR1 = 1;            //定时器0开始计时.<br>    ET1=1;          //开启定时器中断<br>}</p>
+<p>//波特率为<a href="mailto:9600bps@11.0592MHz" target="_blank" rel="noopener">9600bps@11.0592MHz</a>，使用定时器2作为波特率发生器<br>void Timer2Init(void)<br>{<br>    S2CON = 0x50;        //8位数据,可变波特率<br>    AUXR |= 0x04;        //定时器2时钟为Fosc,即1T<br>    T2L = 0xE0;            //设定定时初值<br>    T2H = 0xFE;            //设定定时初值<br>    AUXR |= 0x10;        //启动定时器2<br>    IE2=0x01;       //串行口2中断允许位 ES2=1<br>}</p>
+<p>//通过GY-MCU90615v1模块获得温度<br>void GetTemperature()<br>{<br>    int temp=0;<br>  int YPR[3];<br>  if(sign){<br>       sign=0;         </p>
+<pre><code>if(BUF[0]==0X5A&amp;&amp;BUF[1]==0X5A){                         //帧头   
+
+  YPR[0]=(BUF[4]&lt;&lt;8|BUF[5]);  
+  YPR[1]=(BUF[6]&lt;&lt;8|BUF[7]);
+            temp=YPR[0];
+  temper_shi=temp%10000/1000;
+    temper_ge =temp%1000/100;
+            temper_xiaoshu1=temp%100/10;   //小数十分位
+            temper_xiaoshu2=temp%10;       //小数百分位
+}
+</code></pre><p>   }<br>}</p>
+<p>//刚进入程序的hello显示<br>void Display0()<br>{<br>   unsigned char selData[]={0x3f,0x00,0x76,0x79,0x38,}; //  数码管显示译码表<br>                          /<em> 序号:    0    1      2    3      4       </em>/<br>                   /<em> 显示:     0   (无)  H    E    L    </em>/</p>
+<pre><code>LED_sel=0;
+P0=0;
+P2=0x01;
+P0 = selData[2];
+Delayxms(1);
+
+P0=0;
+P2=0x02;
+P0 = selData[3];
+Delayxms(1);
+
+P0=0;
+P2=0x03;
+P0 = selData[4];
+Delayxms(1);
+
+P0=0;
+P2=0x04;
+P0 = selData[4];
+Delayxms(1);
+</code></pre><p>  P0=0;<br>    P2=0x05;<br>    P0 = selData[0];<br>    Delayxms(1);<br>}</p>
+<p>//数码管显示设置的最小温度-最大温度  实际温度<br>void Display1()//每隔1ms显示一位<br>{<br>    unsigned char selData[]={0x3f,0x06,0x5b,0x4f,0x66,0x6d,0x7d,0x07,0x7f,0x6f,0x40,0x00,0x80,0x76,0x79,0x38}; //  数码管显示译码表<br>                          /<em> 序号:    0    1      2    3      4       5      6       7      8       9     10       11        12   13   14  15</em>/<br>                   /<em> 显示:     0    1    2    3    4    5    6    7    8    9    -   (无)   .    H    E   L</em>/<br>    static  int  i;<br>    P2 = (P2&amp;0xf0)|i;<br>   // P2=i;<br>  LED_sel=0;<br>    switch( i )<br>    {<br>      case 0:<br>            if(shan_wei==0 &amp;&amp; flag_change==1)    //调节的数码管是第一个时<br>                {<br>                   if(flag_500ms) { P0 = selData[11]; }  //前0.5s不显示<br>                     else {P0 = selData[Mintemper_shi];}         //后0.5s显示<br>                }<br>                else { P0 = selData[Mintemper_shi]; }  //调节的数码管不是第一个时正常显示 不闪烁<br>                break;<br>      case 1:<br>            if(shan_wei==1 &amp;&amp; flag_change==1)<br>                {<br>                   if(flag_500ms) { P0 = selData[12]; }<br>                     else {P0 = selData[Mintemper_ge]|0x80;}<br>                }<br>                else { P0 = selData[Mintemper_ge]|0x80; }<br>                break;<br>      case 2:<br>            if(shan_wei==2 &amp;&amp; flag_change==1)<br>                {<br>                   if(flag_500ms) { P0 = selData[11]; }<br>                     else {P0 = selData[Mintemper_xiaoshu];}<br>                }<br>                else { P0 = selData[Mintemper_xiaoshu]; }<br>                break;<br>      case 3:<br>            if(shan_wei==3 &amp;&amp; flag_change==1)<br>                {<br>                   if(flag_500ms) { P0 = selData[11]; }<br>                     else {P0 = selData[dis];}<br>                }<br>                else { P0 = selData[dis]; }<br>                break;<br>      case 4:<br>            if(shan_wei==4 &amp;&amp; flag_change==1)<br>                {<br>                   if(flag_500ms) { P0 = selData[11]; }<br>                     else {P0 = selData[Maxtemper_shi];}<br>                }<br>                else { P0 = selData[Maxtemper_shi]; }<br>                break;<br>        case 5:<br>            if(shan_wei==5 &amp;&amp; flag_change==1)<br>                {<br>                   if(flag_500ms) { P0 = selData[12]; }<br>                     else {P0 = selData[Maxtemper_ge]|0x80;}<br>                }<br>                else { P0 = selData[Maxtemper_ge]|0x80; }<br>                break;<br>         case 6:<br>            if(shan_wei==2 &amp;&amp; flag_change==1)<br>                {<br>                   if(flag_500ms) { P0 = selData[11]; }<br>                     else {P0 = selData[Maxtemper_xiaoshu];}<br>                }<br>                else { P0 = selData[Maxtemper_xiaoshu]; }<br>                break;<br>      default: P0 = 0x00; break;<br>    }<br>    if( ++i&gt;6 )<br>        i = 0;<br>}<br>//数码管显示设置的最小温度-最大温度  实际温度<br>void Display2()   //显示温度，光度<br>{<br>   unsigned char selData[]={0x3f,0x06,0x5b,0x4f,0x66,0x6d,0x7d,0x07,0x7f,0x6f,0x40,0x00}; //  数码管显示译码表<br>                          /<em> 序号:    0    1      2    3      4       5      6       7      8       9     10       11    </em>/<br>                   /<em> 显示:     0    1    2    3    4    5    6    7    8    9    -   (无)</em>/<br>    if(count==150)<br>    {<br>         count=0;<br>     if((temper_shi<em>1000+temper_ge</em>100+temper_xiaoshu1<em>10+temper_xiaoshu2)&lt;(Mintemper_shi</em>1000+Mintemper_ge<em>100+Maxtemper_xiaoshu</em>10))<br>       {<br>         choose_beep=1;   //第一种响声<br>           LED_sel=1;      //左四位LED灯亮表示温度低于设置最小值<br>           P0=0;<br>           P0=0xf0;<br>             Delayxms(8);<br>       }<br>         else if((temper_shi<em>1000+temper_ge</em>100+temper_xiaoshu1<em>10+temper_xiaoshu2)&gt;(Maxtemper_shi</em>1000+Maxtemper_ge<em>100+Mintemper_xiaoshu</em>10))<br>       {<br>         choose_beep=2;   //第二种响声<br>           LED_sel=1;      //右四位LED灯亮表示温度高于设置最大值<br>           P0=0;<br>           P0=0x0f;<br>             Delayxms(8);<br>       }<br>       else  {choose_beep=0;}<br>    }</p>
+<pre><code>LED_sel=0;
+P0=0;
+P2=0x00;
+if(flag_switch==1) { P0 = selData[1]; }
+else if(flag_switch==3) { P0 = selData[2]; }
+Delayxms(1);
+
+P0=0;
+P2=0x04;
+P0 = selData[temper_shi];
+Delayxms(1);
+
+P0=0;
+P2=0x05;
+P0 = selData[temper_ge]|0x80;
+Delayxms(1);
+
+P0=0;
+P2=0x06;
+P0 = selData[temper_xiaoshu1];
+Delayxms(1);
+</code></pre><p>  P0=0;<br>    P2=0x07;<br>    P0 = selData[temper_xiaoshu2];<br>    Delayxms(1);</p>
+<pre><code>count++;      //为了使ＬＥＤ闪烁，计数隔１５０次闪和灭
+</code></pre><p>}</p>
+<p>void main()<br>{<br>  Init();        //初始化<br>    Init_Key();    //初始化按键<br>    Timer0Init();<br>    Timer1Init(); //初始化定时器1<br>    Timer2Init();<br>    InitADC();    //初始化ADC<br>    while(1)<br>    {<br>        control_KEY();<br>            if(flag_switch==0)<br>            {<br>                 Display0();      //显示HELLO<br>            }<br>            else if(flag_switch==1)<br>            {<br>               a[0]=3;a[1]=5;a[2]=8;a[4]=3;a[5]=7;a[6]=2;  //35.8~37.2<br>               GetTemperature();//获得待测人体温度<br>                 Display2();<br>            }<br>            else if(flag_switch==2)<br>            {<br>               flag_beep=0;<br>                 choose_beep=0;<br>               ChangeTemper();<br>          if(flag_1ms) { flag_1ms = 0; Display1(); } //每隔1ms显示一次<br>            }<br>            else if(flag_switch==3)<br>            {<br>               GetTemperature();//获得待测物体温度<br>                 Display2();<br>            }<br>    }<br>}</p>
+<p>/<em>定时器0中断函数</em>/<br>void Timer0() interrupt 1<br>{<br>    count_100us++;<br>    if( count_100us == 10 )  { count_100us = 0;    flag_1ms = 1; count_1ms++;}<br>    if(count_1ms == 300)        {count_1ms=0; flag_500ms=!flag_500ms;  }<br>    if(flag_beep)<br>    {<br>        beep=~beep;                   //产生方波，蜂鸣器发声<br>    }<br>    else<br>    {<br>        beep=0;                      //停止发声<br>    }<br>}</p>
+<p>/<em>定时器1中断函数</em>/<br>void Timer1() interrupt 3<br>{<br>    if(choose_beep==1)<br>    {<br>        count_beep++;<br>      if(count_beep&gt;300)<br>        {<br>           count_beep=0;<br>           flag_beep=!flag_beep;   //产生方波，蜂鸣器发声<br>        }<br>    }<br>    else if(choose_beep==2)<br>    {<br>        count_beep++;<br>      if(count_beep&gt;500)<br>      {<br>           count_beep=0;<br>           flag_beep=!flag_beep;   //产生方波，蜂鸣器发声<br>      }<br>    }<br>    else { flag_beep=0;  count_beep=300; }<br>}</p>
+<p>//串口中断<br>void serial_serve(void) interrupt 8<br>{</p>
+<p>  if(S2CON &amp; S2RI){      //接收导数据<br>     S2CON &amp;= ~S2RI;<br>         BUF[cnt]=S2BUF;<br>       cnt++;             //接收计数<br>     if(cnt==9)<br>     {<br>       cnt=0;<br>       sign=1;<br>     }<br>     //P0=S2BUF;<br>  }<br>}</p>
+
       
     </div>
 
